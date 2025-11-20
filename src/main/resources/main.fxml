@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+	
+	<top>
+    	<Label text="Coffee Shop"/>
+    </top>
+
+	<center>
+ 		<VBox fx:id="mainContainer" spacing="20">
+ 		
+ 			<VBox fx:id="orderSection" spacing="10">
+ 				
+ 				<Label text="Order Instructions:"/>
+
+	            <HBox spacing="10">
+	                <Button text="New/Start Order" onAction="#handleNewOrder"/>
+	                <Button text="Finish Order" onAction="#handleFinishOrder"/>
+	                <TextField fx:id="removeItem" promptText="Enter item to Remove"/>
+	                <Button text="Remove Item" onAction="#handleRemoveItem"/>
+	        	</HBox>
+        	</VBox>
+
+            <VBox fx:id="addonsSection" spacing="10">
+                <Label text="Add-ons:"/>
+
+                <HBox spacing="10">
+                    <Button text="Add Sugar" onAction="#handleAddSugar"/>
+                    <Button text="Add Cream" onAction="#handleAddCream"/>
+                    <Button text="Add Shot" onAction="#handleAddShot"/>
+                    <Button text="Add Milk" onAction="#handleAddMilk"/>
+                    <Button text="Add Vanilla" onAction="#handleAddVanilla"/>
+                </HBox>
+            </VBox>
+
+            <VBox fx:id="displaySection">
+                <TextArea fx:id="orderDisplay" wrapText="true"/>
+            </VBox>
+
+    	</VBox>
+	</center>
+	
+</BorderPane>
